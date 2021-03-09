@@ -1,6 +1,8 @@
 package com.zipcodewilmington;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by leon on 1/29/18.
@@ -101,7 +103,7 @@ public class StringArrayUtils {
         for(int i = 0; i < array.length; i++){
             
         }
-
+        return true;
     }
 
     /**
@@ -110,7 +112,15 @@ public class StringArrayUtils {
      * @return number of occurrences the specified `value` has occurred
      */ // TODO
     public static int getNumberOfOccurrences(String[] array, String value) {
-        return 0;
+        int returnInt = 0;
+
+        for(int i = 0; i < array.length; i++){
+            if(array[i].equals(value)){
+                returnInt++;
+            }
+        }
+
+        return returnInt;
     }
 
     /**
@@ -119,7 +129,21 @@ public class StringArrayUtils {
      * @return array with identical contents excluding values of `value`
      */ // TODO
     public static String[] removeValue(String[] array, String valueToRemove) {
-        return null;
+
+        ArrayList<String> list1 = new ArrayList<String>();
+
+        for(int i = 0; i < array.length; i++){
+            if(!array[i].equals(valueToRemove)){
+                list1.add(array[i]);
+            }
+        }
+
+        String[] returnArray = new String[list1.size()];
+        for (int i = 0; i < list1.size(); i++) {
+            returnArray[i] = list1.get(i);
+        }
+        return returnArray;
+
     }
 
     /**
@@ -127,7 +151,10 @@ public class StringArrayUtils {
      * @return array of Strings with consecutive duplicates removes
      */ // TODO
     public static String[] removeConsecutiveDuplicates(String[] array) {
+
+        ArrayList<String> list1 = new ArrayList<String>();
         return null;
+
     }
 
     /**
@@ -135,7 +162,9 @@ public class StringArrayUtils {
      * @return array of Strings with each consecutive duplicate occurrence concatenated as a single string in an array of Strings
      */ // TODO
     public static String[] packConsecutiveDuplicates(String[] array) {
+
         return null;
+
     }
 
 
